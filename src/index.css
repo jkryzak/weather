@@ -1,4 +1,11 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
-} */
+  background: #222;
+  color: #ddd;
+  font-family: sans-serif;
+}
+
+.container {
+  
+}
