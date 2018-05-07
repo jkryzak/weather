@@ -35,10 +35,6 @@ class App extends Component {
       });
     } else {
       this.setState({
-        temp: undefined,
-        text: undefined,
-        city: undefined,
-        state: undefined,
         error: "You forgot something."
       })      
     }
@@ -46,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <Title />
         <Form getForecast={this.getForecast} />
         <Forecast 

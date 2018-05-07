@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Form = props => (
-    <div>
+    <div className="weather-form">
         <form onSubmit={props.getForecast}>
-            <p><label>Location</label><br/>
-            <input type="text" name="location" placeholder="Enter City, State or ZIP" />
-            <button>Weather Check</button></p>
+            <label className="sr-only">Location</label>
+            <input type="text" name="location" className="location-input" autoFocus placeholder="Enter City, State or ZIP" />
+            <button>Submit</button>
         </form>
     </div>
 )
