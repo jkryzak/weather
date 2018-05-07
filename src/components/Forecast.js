@@ -5,7 +5,9 @@ const Forecast = props => (
         { props.city && 
             <div>
                 <h3>{props.city}, {props.state}</h3>
-                <p>Currently: <strong>{props.temp}°</strong> and {props.text} </p>
+                <p>Currently: <strong>{props.temp}°</strong> and {props.text}</p>
+                <p>Low: {props.low}°</p>
+                <p>High: {props.high}°</p>
             </div>
         }
         { props.error && <p>{ props.error }</p>}
