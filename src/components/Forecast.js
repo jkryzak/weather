@@ -10,6 +10,7 @@ const Forecast = props => (
           Low: {props.low}°<br />
           High: {props.high}°
         </p>
+        <p><small>(code: {props.code})</small></p>
       </div>
     }
     {props.error && <p>{props.error}</p>}
