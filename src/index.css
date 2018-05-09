@@ -7,7 +7,16 @@ body {
   padding: 0;
   background: #222;
   color: #ddd;
-  font-family: sans-serif;
+  font-family: 'Crimson Text', serif;
+}
+
+.title {
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 400;
 }
 
 .container-fluid {
@@ -24,28 +33,40 @@ h1 {
   display: none;
 }
 
+.location-input,
+button {
+  height: 40px;
+  margin: 0;
+  border: 0;
+  font-size: 18px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
 .location-input {
   color: black;
-  height: 40px;
   padding: 0 10px;
-  font-size: 20px;
-  border: 0;
-  width: 75%;
-  margin: 0;
-  margin-right: 1%;
+  width: calc(66.66% - 2px);
+  margin-right: 2px;
 }
 
 button {
-  border: 0;
-  font-size: 20px;
-  height: 40px;
   padding: 0;
-  width: 24%;
-  margin: 0;
+  width: 33.33%;
   background: #ccc;
 }
 
 p small {
   color: #ccc;
   opacity: .5;
+}
+
+.day {
+  width: 33.33%;
+  border: 1px solid #ccc;
+  text-align: center;
+  float: left;
+}
+
+.day:hover {
+  background: rgba(255,255,255,.025)
 }

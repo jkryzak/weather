@@ -19,7 +19,7 @@ const Weather = props => {
   return (
     <div className="forecast">
       <div>
-        <h3>{location.city}, {nationalism}</h3>
+        <h2>{location.city}, {nationalism}</h2>
         <p>Currently: <strong>{condition.temp}°</strong> and {condition.text}</p>
         <p>
           Low: {low}°<br />
@@ -27,7 +27,7 @@ const Weather = props => {
         </p>
         <p><small>(code: {condition.code})</small></p>
         <div>
-          <div>Forecast stuff here</div>
+          <h2>Six Day Forecast for {location.city}</h2>
           {forecast.map((dayInfo, index) => <Forecast key={index} info={dayInfo}/>).slice(1,7)}
         </div>
       </div>
