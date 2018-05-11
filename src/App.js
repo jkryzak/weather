@@ -37,7 +37,7 @@ class App extends Component {
         <Title />
         <Form onSubmit={this.addNewLocale}/>
         {this.state.hasError &&
-          <div className="snuggle-warning">Bitcoin please.</div>
+          <div className="snuggle-warning">Something went wrong, please try again.</div>
         }
         {this.state.forecast.length > 0 && <Weather {...this.state}/>}
         {/* ↑ is a short cut for ↓ */}

@@ -7,11 +7,16 @@ body {
   padding: 0;
   background: #222;
   color: #ddd;
-  font-family: 'Crimson Text', serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 .title {
   text-align: center;
+  padding-bottom: 10px;
+}
+
+.title p {
+  margin-top: 0;
 }
 
 h1, h2, h3 {
@@ -19,10 +24,17 @@ h1, h2, h3 {
   font-weight: 400;
 }
 
+h1, h2 {
+  margin-bottom: 5px;
+  font-family: 'Crimson Text', serif;
+}
+
 .container-fluid {
   width: 90%;
   margin: 0 auto;
   max-width: 800px;
+  padding-bottom: 40px;
+  overflow: hidden; /* because last items on page float */
 }
 
 h1 {
@@ -55,6 +67,26 @@ button {
   background: #ccc;
 }
 
+.fake-button {
+  cursor: pointer;
+}
+
+.weather-info {
+  margin:10px 0 40px;
+  padding: 0 10px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.weather-info:hover {
+  background: rgba(255,255,255,.05);
+}
+
+.forecast-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin:10px 0 40px;
+}
+
 p small {
   color: #ccc;
   opacity: .5;
@@ -62,11 +94,16 @@ p small {
 
 .day {
   width: 33.33%;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255,255,255,.1);
   text-align: center;
   float: left;
 }
 
 .day:hover {
-  background: rgba(255,255,255,.025)
+  background: rgba(255,255,255,.05)
+}
+
+.snuggle-warning {
+  color: red;
+  padding: 10px 0;
 }
