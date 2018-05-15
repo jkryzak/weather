@@ -2,6 +2,12 @@ import React from 'react';
 
 class Form extends React.Component {
 
+  // constructor() {
+  //   super();
+  //   this.getLocation = this.getLocation.bind(this);
+  // }  
+  // This is the SAME thing as doing the arrow function on the onclick
+
   state = {
     location: '',
   }
@@ -15,18 +21,31 @@ class Form extends React.Component {
     this.setState({ location: '' });
   }
 
-  // getLocation() {
-  //     if (navigator.geolocation) {
-  //         navigator.geolocation.getCurrentPosition(showPosition);
-  //     } else {
-  //       console.log('aint got no support for this feature')
-  //     }
-  // }
-  
+  getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.showPosition);
+      } else {
+        console.log('aint got no support for this feature')
+      }
+  }
+
   // showPosition(position) {
-  //     document.log(position.coords.latitude)
-  //     document.log(position.coords.longitude)
+  //   console.log(position.coords.latitude)
+  //   console.log(position.coords.longitude)
   // }
+
+  showPosition = async (position) => {
+    const location = "(" +position.coords.latitude + "," + position.coords.longitude + ")";
+    const api_call = await fetch(`https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22${location}%22)&format=json`);
+    const weatherData = await api_call.json(); // everything that comes back will be saved as 'weatherData'
+    this.props.onSubmit(weatherData); // let a parent element have this weatherData
+    this.setState({ location: '' });
+    console.log(location)
+  }
+
+  componentDidMount(){
+    this.getLocation();
+  }
 
   render() {
     return (
@@ -40,7 +59,7 @@ class Form extends React.Component {
           />
           <button>Submit</button>
         </form>
-        {/* <span className="fake-button" onClick={(this.getLocation)}>GPS</span> */}
+        {/* <span className="fake-button" onClick={() => this.getLocation()}>GPS</span> */}
       </div>
     )
   }
