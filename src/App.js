@@ -10,7 +10,6 @@ class App extends Component {
   state = {
     location: {},
     condition: {},
-    atmosphere: {},
     forecast: [],
     hasError: false
   }
@@ -26,7 +25,6 @@ class App extends Component {
       this.setState({
         location: weatherData.query.results.channel.location, 
         condition: weatherData.query.results.channel.item.condition,
-        atmosphere: weatherData.query.results.channel.atmosphere,
         forecast: weatherData.query.results.channel.item.forecast,
         hasError: false
       });

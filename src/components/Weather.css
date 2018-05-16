@@ -1,0 +1,40 @@
+.weather-info {
+  overflow: hidden;
+  padding: 1em;
+}
+
+
+.current-info {
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+.currently {
+  display: none;
+}
+
+.current-temp {
+  font-size: 100px;
+  line-height: 100px;
+  color: white;
+  margin-left: 45px;
+}
+
+.current-text {
+  display: block;
+  margin-right: 50px;
+  margin-left: 45px;
+  text-align: center;
+}
+
+.temp-low {
+  color: #3cabdb;
+  
+  clear: left;
+  float: left;
+}
+.temp-high {
+  color: #fd3259;
+  float: right;
+}

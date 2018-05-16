@@ -1,8 +1,9 @@
 import React from "react";
 import Forecast from './Forecast';
+import './Weather.css'
 
 const Weather = props => {
-  let {condition, location, forecast, atmosphere} = props;
+  let {condition, location, forecast} = props;
   // ↑ is a short cut for ↓
   // let condition = this.props.condition;
   // let location = this.props.location;
@@ -20,13 +21,14 @@ const Weather = props => {
     <div className="forecast">
       <h2>{location.city}, {nationalism}</h2>
       <div className="weather-info">
-        <p>Currently: <strong className="current-temp">{condition.temp}°</strong> <span className="current-text">{condition.text}</span></p>
-        <p>
-          Low: {low}°<br />
-          High: {high}°
-        </p>
-        <p>Humidity {atmosphere.humidity}%</p>
-        <p>code {condition.code}</p>
+        <div className="current-info">
+          <span  className="currently">Currently:</span>
+          <span className="current-temp">{condition.temp}°</span>
+          <span className="current-text">{condition.text}</span>
+        </div>
+        <div className="temp-low">Low: {low}°</div>
+        <div className="temp-high">High: {high}°</div>
+        {/* <div>code {condition.code}</div> */}
       </div>
       
       <div className="forecast-info">

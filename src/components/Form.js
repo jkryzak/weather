@@ -36,7 +36,7 @@ class Form extends React.Component {
 
   showPosition = async (position) => {
     const location = "(" +position.coords.latitude + "," + position.coords.longitude + ")";
-    const api_call = await fetch(`https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22${location}%22)&format=json`);
+    const api_call = await fetch(`https://query.yahooapis.com/v1/public/yql?q=select%20location%2C%20item.condition%2C%20weather.forecast%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22${location}%22)&format=json`);
     const weatherData = await api_call.json(); // everything that comes back will be saved as 'weatherData'
     this.props.onSubmit(weatherData); // let a parent element have this weatherData
     this.setState({ location: '' });
