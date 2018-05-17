@@ -1,13 +1,17 @@
 .weather-info {
   overflow: hidden;
+  margin:10px 0 40px;
   padding: 1em;
+  border: 1px solid rgba(255,255,255,.1);
 }
 
+.weather-info:hover {
+  background: rgba(255,255,255,.05);
+}
 
 .current-info {
   text-align: center;
   margin: 0 auto;
-  
 }
 
 .currently {
@@ -15,8 +19,8 @@
 }
 
 .current-temp {
-  font-size: 100px;
-  line-height: 100px;
+  font-size: 6.25em;
+  line-height: 1;
   color: white;
   margin-left: 45px;
 }
@@ -25,6 +29,7 @@
   display: block;
   margin-right: 50px;
   margin-left: 45px;
+  margin-bottom: 1em;
   text-align: center;
 }
 
@@ -37,4 +42,26 @@
 .temp-high {
   color: #fd3259;
   float: right;
+}
+
+@media only screen and (max-width: 640px) {
+  .weather-form {
+      position: fixed;
+      left: 0; 
+      right: 0;
+      bottom: 0;
+      background: #393939;
+      padding: 3vh 5%;
+      z-index: 10; /* otherwise elements with an opacity less than 1 overlap -huh? */
+      box-shadow: 0 0 10px 4px #191919;
+  }
+
+  .title,
+  .title p {
+    margin-bottom: 0;
+  }
+
+  .forecast-info {
+    margin-bottom: calc(4vh + 40px)
+  }
 }

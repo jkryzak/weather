@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
+import HttpsRedirect from 'react-https-redirect';
 import './App.css';
 import Title from './components/Title';
 import Form from './components/Form';
@@ -33,16 +34,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <Title />
-        <Form onSubmit={this.addNewLocale}/>
-        {this.state.hasError &&
-          <div className="snuggle-warning">Something went wrong, please try again.</div>
-        }
-        {this.state.forecast.length > 0 && <Weather {...this.state}/>}
-        {/* ↑ is a short cut for ↓ */}
-        {/* <Weather location={this.state.location} condition={this.state.condition} forecast={this.state.forecast} hasError={this.state.hasError} />  */}
-      </div>
+      <HttpsRedirect>
+        <div className="container-fluid">
+          <Title />
+          <Form onSubmit={this.addNewLocale}/>
+          {this.state.hasError &&
+            <div className="snuggle-warning">Something went wrong, please try again.</div>
+          }
+          {this.state.forecast.length > 0 && <Weather {...this.state}/>}
+          {/* ↑ is a short cut for ↓ */}
+          {/* <Weather location={this.state.location} condition={this.state.condition} forecast={this.state.forecast} hasError={this.state.hasError} />  */}
+        </div>
+      </HttpsRedirect>
     );
   }
 }

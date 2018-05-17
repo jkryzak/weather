@@ -25,7 +25,7 @@ class Form extends React.Component {
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(this.showPosition);
       } else {
-        console.log('aint got no support for this feature')
+        alert('aint got no support for this gps feature')
       }
   }
 
