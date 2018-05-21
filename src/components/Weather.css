@@ -3,6 +3,7 @@
   margin:10px 0 40px;
   padding: 1em;
   border: 1px solid rgba(255,255,255,.1);
+  position: relative;
 }
 
 .weather-info:hover {
@@ -35,7 +36,6 @@
 
 .temp-low {
   color: #3cabdb;
-  
   clear: left;
   float: left;
 }
@@ -64,4 +64,10 @@
   .forecast-info {
     margin-bottom: calc(4vh + 40px)
   }
+}
+
+.weather-icon {
+  left: calc(50% - 16px);
+  position: absolute;
+  bottom: 9px;
 }
